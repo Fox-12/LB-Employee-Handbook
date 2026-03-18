@@ -3,30 +3,37 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#0f1419;
 color:#e6edf3;
+line-height:1.65;
 }
-
-/* layout */
 
 .container{
 display:flex;
 }
 
-/* sidebar */
-
 .sidebar{
-width:260px;
+width:290px;
 background:#161b22;
 height:100vh;
 padding:20px;
 position:fixed;
 overflow:auto;
 border-right:1px solid #30363d;
+box-sizing:border-box;
 }
 
 .sidebar h2{
 color:#9be9a8;
 font-size:18px;
-margin-bottom:15px;
+margin:0 0 15px;
+}
+
+.sidebar strong{
+display:block;
+margin:16px 0 8px;
+color:#f0b27a;
+font-size:14px;
+text-transform:uppercase;
+letter-spacing:.04em;
 }
 
 .sidebar a{
@@ -36,60 +43,109 @@ text-decoration:none;
 padding:6px 0;
 }
 
-.sidebar a:hover{
+.sidebar a:hover,
+.sidebar a:focus{
 color:#6ed3ff;
 }
 
-/* main content */
-
 .content{
-margin-left:280px;
+margin-left:310px;
 padding:40px;
-max-width:900px;
+max-width:940px;
 }
 
 h1{
 color:#6ed3ff;
+margin-top:0;
 }
 
 h2{
 color:#9be9a8;
-margin-top:40px;
+margin-top:42px;
+scroll-margin-top:20px;
 }
 
 h3{
 color:#f0b27a;
+margin-top:24px;
 }
 
-/* table of contents */
+p, li{
+color:#d6dde5;
+}
+
+.intro,
+.callout,
+#toc,
+.related-guides,
+.reward{
+background:#161b22;
+border:1px solid #30363d;
+border-radius:10px;
+}
+
+.intro,
+.callout,
+.reward,
+.related-guides{
+padding:18px 20px;
+margin:20px 0;
+}
 
 #toc{
-background:#161b22;
 padding:20px;
-border-radius:8px;
-margin-bottom:30px;
-border:1px solid #30363d;
+margin:24px 0 30px;
 }
 
-#toc ul{
+#toc ul,
+.related-guides ul{
 list-style:none;
 padding-left:0;
+margin:10px 0 0;
 }
 
-#toc li{
-margin:6px 0;
+#toc li,
+.related-guides li{
+margin:7px 0;
 }
 
-/* reward code */
+#toc a,
+.related-guides a{
+color:#8fdcff;
+text-decoration:none;
+}
+
+#toc a:hover,
+.related-guides a:hover{
+text-decoration:underline;
+}
 
 .reward{
-margin-top:60px;
-padding:15px;
-background:#1f2933;
 border-left:4px solid #9be9a8;
+margin-top:50px;
 }
 
-/* progress bar */
+.chapter-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:14px;
+margin-top:24px;
+}
+
+.chapter-card{
+display:block;
+padding:16px;
+background:#161b22;
+border:1px solid #30363d;
+border-radius:10px;
+color:#d6dde5;
+text-decoration:none;
+}
+
+.chapter-card:hover{
+border-color:#6ed3ff;
+color:#ffffff;
+}
 
 #progressBar{
 position:fixed;
@@ -99,4 +155,19 @@ height:4px;
 background:#6ed3ff;
 width:0%;
 z-index:999;
+}
+
+@media (max-width: 900px){
+.sidebar{
+position:static;
+width:100%;
+height:auto;
+}
+.container{
+flex-direction:column;
+}
+.content{
+margin-left:0;
+padding:24px;
+}
 }
